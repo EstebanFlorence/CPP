@@ -51,6 +51,24 @@ int	PhoneBook::addContact(int i)
 
 }
 
+int	PhoneBook::pressButton()
+{
+	static int	i = 0;
+	std::string	button;
+
+	while (std::getline(std::cin, button))
+	{
+		//phone.displayBook();
+		if (button == "ADD" && addContact(i++))
+			;
+		if (button == "SEARCH")
+			searchContact();
+		if (button == "EXIT")
+			return (exitPhone());
+	}
+
+}
+
 void	PhoneBook::searchContact()
 {
 

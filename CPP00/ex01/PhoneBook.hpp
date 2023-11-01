@@ -20,6 +20,7 @@ class	PhoneBook
 		PhoneBook();
 		~PhoneBook();
 
+		int		pressButton();
 		int		errorPhone();
 		int		exitPhone();
 		int		addContact(int i);
