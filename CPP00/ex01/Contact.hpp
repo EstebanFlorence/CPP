@@ -1,9 +1,10 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
+# include <cstdlib>
 # include <iostream>
 # include <string>
-# include <cstdlib>
+# include <iomanip>
 
 class	Contact
 {
@@ -15,14 +16,13 @@ class	Contact
 		std::string	darkSecret;
 
 	public:
-		Contact();
-		~Contact();
 
 		std::string	getFname();
 		std::string	getLname();
 		std::string	getNickname();
 		std::string	getNumber();
 		std::string	getSecret();
+		std::string	trunContact(std::string);
 
 		int			setFname(std::string);
 		int			setLname(std::string);

@@ -14,18 +14,18 @@
 class	PhoneBook
 {
 	private:
-		Contact	contacts[8];
+		Contact		contacts[8];
 
 	public:
-		PhoneBook();
-		~PhoneBook();
 
-		int		pressButton();
-		int		errorPhone();
-		int		exitPhone();
-		int		addContact(int i);
-		void	searchContact();
-		void	displayBook();
+		void		displayMenu();
+		void		pressButton();
+		void		exitPhone();
+		int			addContact(int &);
+		int			searchContact(int);
+		void		displayBook();
+		void		displayContact(int);
+		int			errorPhone(int);
 
 };
 
