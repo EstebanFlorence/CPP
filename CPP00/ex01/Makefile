@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/28 22:28:39 by adi-nata          #+#    #+#              #
-#    Updated: 2023/11/02 03:19:41 by adi-nata         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME		=	PhoneBook
 
 OBJ_DIR		=	./.obj/
@@ -58,9 +46,5 @@ re:				fclean all
 
 run:			all
 				./${NAME}
-
-mem:			all
-				export MallocStackLogging=1
-				leaks --atExit --list -- ./${NAME} ${ARG}
 
 .PHONY:			all clean fclean re bonus
