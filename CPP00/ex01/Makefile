@@ -6,7 +6,7 @@
 #    By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/28 22:28:39 by adi-nata          #+#    #+#              #
-#    Updated: 2023/10/29 13:03:24 by adi-nata         ###   ########.fr        #
+#    Updated: 2023/11/02 03:19:41 by adi-nata         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ CC			=	g++
 
 RM			=	rm -rf
 
-FLAGS		=	-Wall -Wextra -Werror -std=c++98
+FLAGS		=	-Wall -Wextra -Werror -g -std=c++98
 
 MAKEFLAGS	+=	--silent
 
@@ -55,6 +55,9 @@ fclean:			clean
 				@${RM} ${NAME}
 
 re:				fclean all
+
+run:			all
+				./${NAME}
 
 mem:			all
 				export MallocStackLogging=1
