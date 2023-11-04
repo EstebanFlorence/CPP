@@ -2,7 +2,7 @@ NAME		=	DreamJob
 
 OBJ_DIR		=	./.obj/
 
-SRCS		=   Account.cpp
+SRCS		=   tests.cpp	Account.cpp
 
 OBJS        =	$(addprefix $(OBJ_DIR),$(notdir $(SRCS:.cpp=.o)))
 
