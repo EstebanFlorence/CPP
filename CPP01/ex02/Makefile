@@ -1,8 +1,8 @@
-NAME		=	Zombie
+NAME		=	HiThisIsBrain
 
 OBJ_DIR		=	./.obj/
 
-SRCS		=   main.cpp	Zombie.cpp	newZombie.cpp	randomChump.cpp
+SRCS		=   main.cpp
 
 OBJS        =	$(addprefix $(OBJ_DIR),$(notdir $(SRCS:.cpp=.o)))
 
