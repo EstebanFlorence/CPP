@@ -4,12 +4,12 @@
 			"name": "(lldb) Launch",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/CPP00/ex01/./PhoneBook",
-			"args": [],
+			"program": "${workspaceFolder}/CPP01/ex01/./MoarZombies",
+			"args": [/* "<", "input_file.in" */],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
 			"environment": [],
-			"externalConsole": false,
+			"externalConsole": true,
 			"MIMode": "lldb"
 		}
 	]

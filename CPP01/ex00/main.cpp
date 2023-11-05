@@ -1,15 +1,18 @@
 #include "Zombie.hpp"
 
-int	zombieName(std::string &newName)
+int	zombieName(std::string &alloc, std::string &newName)
 {
 	std::string	in;
 
 	std::cout << "Zombie name?" << std::endl;
 	std::getline(std::cin, in);
-	std::cout << "\r\033[A\33[2K";
-	std::cout << "\r\033[A\33[2K";
+	std::cout << "\r\033[A\33[2K\r\033[A\33[2K";
 	if (in.empty())
+	{
+		alloc.clear();
+		std::cout << CLR_RMV << std::flush;
 		return (1);
+	}
 	newName = in;
 	return (0);
 }
@@ -27,21 +30,23 @@ int	main()
 		if (in == "1" || in == "h" || in == "H")
 		{
 			std::cout << RED;
-			if (zombieName(newName))
+			if (zombieName(in, newName))
 				continue ;
 			Zombie	*zombie = newZombie(newName);
 			zombie->announce();
 			delete zombie;
-			std::cout << CLR_RMV;
+			std::cout << CLR_RMV << std::flush;
 		}
 		else if (in == "2" || in == "s" || in == "S")
 		{
 			std::cout << BLUE;
-			if (zombieName(newName))
+			if (zombieName(in, newName))
 				continue ;
 			randomChump(newName);
-			std::cout << CLR_RMV;
+			std::cout << CLR_RMV << std::flush;
 		}
+		else if (in == "q" || in == "3")
+			return (0);
 		in.clear();
 	}
 
