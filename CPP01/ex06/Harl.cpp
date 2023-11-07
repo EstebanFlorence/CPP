@@ -36,8 +36,6 @@ void	Harl::error()
 
 void	Harl::complain(int level)
 {
-	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-
 	switch (level)
 	{
 		case 0:
@@ -51,5 +49,4 @@ void	Harl::complain(int level)
 		default:
 			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
-
 }
