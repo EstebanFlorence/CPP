@@ -10,14 +10,15 @@ int	replaceInFile(const std::string& filename, const std::string& s1, const std:
 	if (!inputFile.is_open())
 	{
 		std::cerr << "Error opening " << filename << std::endl;
-		return -1;
+		return 1;
 	}
 
 	std::ofstream	outputFile(filename + ".replace");
 	if (!outputFile.is_open())
 	{
+		inputFile.close();
 		std::cerr << "Error opening " << filename << ".replace" << std::endl;
-		return -1;
+		return 1;
 	}
 
 	std::string	line;
@@ -50,7 +51,5 @@ int	main(int ac, char **av)
 	std::string	s1 = av[2];
 	std::string	s2 = av[3];
 
-	replaceInFile(filename, s1, s2);
-
-	return 0;
+	return replaceInFile(filename, s1, s2);
 }
