@@ -1,8 +1,8 @@
-NAME		=	Weapon
+NAME		=	SedLosers
 
 OBJ_DIR		=	./.obj/
 
-SRCS		=   main.cpp Weapon.cpp	HumanA.cpp	HumanB.cpp
+SRCS		=   main.cpp
 
 OBJS        =	$(addprefix $(OBJ_DIR),$(notdir $(SRCS:.cpp=.o)))
 

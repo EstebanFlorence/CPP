@@ -1,0 +1,13 @@
+Usage ./SedIsForLosers: <filename> <s1> <s2>
+make: *** [run] Error 1
+➜  ex04 gittammourt:(main) ✗ touch ReplaceFile.cpp   
+➜  ex04 gittammourt:(main) ✗ make fclean
+Deleting SedLosers objs ✔️
+Deleting SedLosers binary ✔️
+➜  ex04 gittammourt:(main) ✗ make run   
+Compilation of SedLosers ...
+SedLosers created ✔️
+Usage ./SedLosers: <filename> <s1> <s2>
+make: *** [run] Error 1
+➜  ex04 gittammourt:(main) ✗ touch file           
+➜  ex04 gittammourt:(main) ✗ 

@@ -1,10 +1,7 @@
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
 
-# include <cstdlib>
 # include <iostream>
-# include <string>
-# include <iomanip>
 
 # define CLR_RMV "\033[0m"
 # define RED "\033[1;31m"
@@ -15,17 +12,20 @@
 # define PURPLE "\033[1;35m"
 # define CYAN "\033[1;36m"
 
-class Weapon
+class	Harl
 {
 	private:
-		std::string	type;
+		void	debug();
+		void	info();
+		void	warning();
+		void	error();
+		void	(Harl::*levelsLog[4])();
 
 	public:
-		Weapon(const std::string weaponType);
-		~Weapon();
+		Harl();
+		~Harl();
 
-		const std::string	&getType() const;
-		void				setType(const std::string &newType);
+		void	complain(int level);
 
 };
 
