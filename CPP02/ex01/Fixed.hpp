@@ -18,13 +18,12 @@ class	Fixed
 		~Fixed();
 
 	public:
-		Fixed&	operator=(const Fixed& other);
-
-	public:
 		int		getRawBits() const;
 		void	setRawBits(int const raw);
 		float	toFloat() const;
 		int		toInt() const;
+
+		Fixed&	operator=(const Fixed& other);
 
 };
 

@@ -3,7 +3,6 @@
 
 # include <iostream>
 
-
 # define CLR_RMV "\033[0m"
 # define RED "\033[1;31m"
 # define GREEN "\033[1;32m"
@@ -34,8 +33,6 @@ class	Harl
 
 		void	complain(std::string level);
 
-
 };
-
 
 #endif

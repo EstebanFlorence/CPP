@@ -1,4 +1,4 @@
-NAME		=	Fixed
+NAME		=	Fixed1
 
 OBJ_DIR		=	./.obj/
 

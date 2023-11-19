@@ -1,4 +1,4 @@
-NAME		=	SedLosers
+NAME		=	ReplaceFile
 
 OBJ_DIR		=	./.obj/
 
