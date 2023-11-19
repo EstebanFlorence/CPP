@@ -44,6 +44,7 @@
 [20231105_000735] index:4;p_amount:1321;withdrawal:76;amount:1245;nb_withdrawals:1
 [20231105_000735] index:5;p_amount:23;withdrawal:refused[20231105_000735] index:6;p_amount:763;withdrawal:657;amount:106;nb_withdrawals:1
 [20231105_000735] index:7;p_amount:16596;withdrawal:7654;amount:8942;nb_withdrawals:1
+
 [20231105_000735] accounts:8;total:20049;deposits:8;withdrawals:6
 
 [20231105_000735] index:0;amount:47;deposits:1;withdrawals:0
