@@ -32,7 +32,7 @@ Account::~Account( void )
 
 	_displayTimestamp();
 	std::cout << " index:" << _accountIndex << ";" 
-	<< "amount:" << _totalAmount << ";" 
+	<< "amount:" << _amount << ";" 
 	<< "closed" << std::endl;
 
 }
