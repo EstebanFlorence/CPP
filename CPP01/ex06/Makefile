@@ -6,11 +6,11 @@ SRCS		=   main.cpp	Harl.cpp
 
 OBJS        =	$(addprefix $(OBJ_DIR),$(notdir $(SRCS:.cpp=.o)))
 
-CC			=	g++
+CXX			=	g++
 
 RM			=	rm -rf
 
-FLAGS		=	-Wall -Wextra -Werror -g -std=c++98
+CXXFLAGS		=	-Wall -Wextra -Werror -g -std=c++98
 
 MAKEFLAGS	+=	--silent
 
@@ -24,11 +24,11 @@ CYAN 		=	\033[1;36m
 
 ${OBJ_DIR}%.o:	%.cpp
 				@mkdir -p ${OBJ_DIR}
-				${CC} ${FLAGS} -c $< -o $@
+				${CXX} ${CXXFLAGS} -c $< -o $@
 
 ${NAME}:		${OBJS}
 				@echo "${GREEN}Compilation ${CLR_RMV}of ${YELLOW}${NAME} ${CLR_RMV}..."
-				${CC} ${FLAGS} ${OBJS} -o ${NAME}
+				${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME}
 				@echo "${GREEN}${NAME} created[0m ✔️"
 
 all:			${NAME}

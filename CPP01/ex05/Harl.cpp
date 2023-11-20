@@ -42,5 +42,5 @@ void	Harl::complain(std::string level)
 			return ;
 		}
 	}
-	std::cerr << "Wrong command" << std::endl;
+	std::cerr << RED "Wrong command" CLR_RMV << std::endl;
 }

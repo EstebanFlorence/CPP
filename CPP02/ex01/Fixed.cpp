@@ -1,6 +1,5 @@
 #include "Fixed.hpp"
 
-//	~ Constructors & Destructors ~
 Fixed::Fixed()
 : fixedPointVal(0)
 {
@@ -10,7 +9,7 @@ Fixed::Fixed()
 Fixed::Fixed(const Fixed& other)
 : fixedPointVal(other.fixedPointVal)
 {
-    std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int value)
@@ -27,34 +26,26 @@ Fixed::Fixed(const float value)
 
 Fixed::~Fixed()
 {
-    std::cout << "Destructor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
-//	~ Overload operators ~
 Fixed&	Fixed::operator=(const Fixed& other)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
 		fixedPointVal = other.fixedPointVal;
 	return *this;
 }
 
-std::ostream&	operator<<(std::ostream& os, const Fixed& fixed)
-{
-	os << fixed.toFloat();
-	return os;
-}
-
-//	~ Member functions ~
 int	Fixed::getRawBits() const
 {
-    std::cout << "getRawBits member function called" << std::endl;
+	std::cout << "getRawBits member function called" << std::endl;
 	return fixedPointVal;
 }
 
 void	Fixed::setRawBits(int const raw)
 {
-    std::cout << "setRawBits member function called" << std::endl;
+	std::cout << "setRawBits member function called" << std::endl;
 	fixedPointVal = raw;
 }
 
@@ -63,3 +54,11 @@ float	Fixed::toFloat() const
 
 int	Fixed::toInt() const
 { return (fixedPointVal >> fractBits); }
+
+
+
+std::ostream&	operator<<(std::ostream& os, const Fixed& fixed)
+{
+	os << fixed.toFloat();
+	return os;
+}
