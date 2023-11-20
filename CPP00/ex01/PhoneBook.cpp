@@ -33,10 +33,10 @@ void	PhoneBook::displayContact(int i)
 
 void	PhoneBook::displayBook()
 {
-	std::cout << "|" << std::setw(10) << std::left << "Index";
-	std::cout << "|" << std::setw(10) << std::left << "Name";
-	std::cout << "|" << std::setw(10) << std::left << "Surname";
-	std::cout << "|" << std::setw(10) << std::left << "Nickname";
+	std::cout << "|" << std::setw(10) << std::right << "Index";
+	std::cout << "|" << std::setw(10) << std::right << "Name";
+	std::cout << "|" << std::setw(10) << std::right << "Surname";
+	std::cout << "|" << std::setw(10) << std::right << "Nickname";
 	std::cout << "|" << std::endl;
 
 	for (int i = 0; i < 8; i++)
@@ -74,32 +74,57 @@ int	PhoneBook::addContact(int &i)
 
 	std::cout << BLUE "First name: " CLR_RMV;
 	std::getline(std::cin, line);
-	if (contacts[i].setFname(line))
-		return (errorPhone(1));
+	while (contacts[i].setFname(line))
+	{
+		errorPhone(1);
+		line.clear();
+		std::cout << BLUE "First name: " CLR_RMV;
+		std::getline(std::cin, line);
+	}
 	line.clear();
 
 	std::cout << BLUE "Last name: " CLR_RMV;
 	std::getline(std::cin, line);
-	if (contacts[i].setLname(line))
-		return (errorPhone(1));
+	while (contacts[i].setLname(line))
+	{
+		errorPhone(1);
+		line.clear();
+		std::cout << BLUE "Last name: " CLR_RMV;
+		std::getline(std::cin, line);
+	}
 	line.clear();
 
 	std::cout << BLUE "Nickname: " CLR_RMV;
 	std::getline(std::cin, line);
-	if (contacts[i].setNickname(line))
-		return (errorPhone(1));
+	while (contacts[i].setNickname(line))
+	{
+		errorPhone(1);
+		line.clear();
+		std::cout << BLUE "Nickname: " CLR_RMV;
+		std::getline(std::cin, line);
+	}
 	line.clear();
 
 	std::cout << BLUE "Phone number: " CLR_RMV;
 	std::getline(std::cin, line);
-	if (contacts[i].setNumber(line))
-		return (errorPhone(1));
+	while (contacts[i].setNumber(line))
+	{
+		errorPhone(1);
+		line.clear();
+		std::cout << BLUE "Phone number: " CLR_RMV;
+		std::getline(std::cin, line);
+	}
 	line.clear();
 
 	std::cout << BLUE "Darkest secret: " CLR_RMV;
 	std::getline(std::cin, line);
-	if (contacts[i].setSecret(line))
-		return (errorPhone(1));
+	while (contacts[i].setSecret(line))
+	{
+		errorPhone(1);
+		line.clear();
+		std::cout << BLUE "Darkest secret: " CLR_RMV;
+		std::getline(std::cin, line);
+	}
 	line.clear();
 
 	std::cout << std::endl;
@@ -126,11 +151,11 @@ void	PhoneBook::pressButton()
 	while (std::getline(std::cin, button))
 	{
 		std::cout << "\r\033[A\33[2K";
-		if (button == "1")
+		if (button == "1" || button == "ADD")
 			addContact(i);
-		else if (button == "2")
+		else if (button == "2" || button == "SEARCH")
 			searchContact(i);
-		else if (button == "3")
+		else if (button == "3" || button == "EXIT")
 			exitPhone();
 		button.clear();
 	}
