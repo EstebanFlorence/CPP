@@ -1,8 +1,8 @@
-NAME		=	Fixed2
+NAME		=	Fixed3
 
 OBJ_DIR		=	./.obj/
 
-SRCS		=   main.cpp	Fixed.cpp
+SRCS		=   main.cpp	Fixed.cpp	Point.cpp	bsp.cpp
 
 OBJS        =	$(addprefix $(OBJ_DIR),$(notdir $(SRCS:.cpp=.o)))
 
@@ -10,7 +10,7 @@ CXX			=	g++
 
 RM			=	rm -rf
 
-CXXFLAGS		=	-Wall -Wextra -Werror -g -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -g -std=c++98
 
 MAKEFLAGS	+=	--silent
 

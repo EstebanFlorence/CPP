@@ -10,7 +10,7 @@ CXX			=	g++
 
 RM			=	rm -rf
 
-CXXFLAGS		=	-Wall -Wextra -Werror -g -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -g -std=c++98
 
 MAKEFLAGS	+=	--silent
 
