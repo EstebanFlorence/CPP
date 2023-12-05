@@ -44,5 +44,11 @@ void	ClapTrap::beRepaired(unsigned int amount)
         std::cout << "ClapTrap " << Name << " is repaired for " << amount << " points! Hit points: " << HitPoints << std::endl;
 	}
 	else
-        std::cout << "ClapTrap " << Name << " can't be repaired. No hit points or energy points left!" << std::endl;
+	{
+        std::cout << "ClapTrap " << Name << " can't be repaired.";
+		if (!HitPoints)
+			std::cout << " No hit points left!" << std::endl;
+		else
+			std::cout << " No energy points left!" << std::endl;
+	}
 }
