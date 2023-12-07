@@ -19,6 +19,7 @@ class	Point
 
 		Fixed	getX() const;
 		Fixed	getY() const;
+		Fixed	abs() const;
 
 };
 

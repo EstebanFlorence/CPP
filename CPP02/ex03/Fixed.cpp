@@ -160,3 +160,11 @@ std::ostream&	operator<<(std::ostream& os, const Fixed& fixed)
 	os << fixed.toFloat();
 	return os;
 }
+
+//
+Fixed	Fixed::abs() const
+{
+	if (fixedPointVal < 0)
+		return Fixed(-this->fixedPointVal);
+	return *this;
+}

@@ -17,6 +17,8 @@ class	Fixed
 		Fixed(const Fixed& other);
 		~Fixed();
 
+		Fixed&	operator=(const Fixed& other);
+
 	public:
 		int		getRawBits() const;
 		void	setRawBits(int const raw);
@@ -27,8 +29,6 @@ class	Fixed
 		static const Fixed&	min(const Fixed& a, const Fixed& b);
 		static Fixed&		max(Fixed& a, Fixed& b);
 		static const Fixed&	max(const Fixed&a, const Fixed& b);
-
-		Fixed&	operator=(const Fixed& other);
 
 		bool	operator>(const Fixed& other) const;
 		bool	operator<(const Fixed& other) const;
@@ -46,6 +46,8 @@ class	Fixed
 		Fixed&	operator--();
 		Fixed	operator++(int);
 		Fixed	operator--(int);
+
+		Fixed	abs() const;
 
 };
 

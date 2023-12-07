@@ -1,11 +1,17 @@
 #include "Point.hpp"
 
-Fixed	area(const Point& a, const Point& b, const Point& c)
+float	area(const Point& a, const Point& b, const Point& c)
 {
-	return 0.5 * std::abs((a.getX() - b.getX()) * (a.getY() - c.getY())
-						- (a.getY() - b.getY()) * (a.getX() - c.getY()));
+	return (a.getX() * (b.getY() - c.getY()) +
+			b.getX() * (c.getY() - a.getY()) +
+			c.getX() * (a.getY() - b.getY())).abs().toFloat() / 2;
 }
 bool bsp( Point const a, Point const b, Point const c, Point const point)
 {
-	
+	float	areaABC = area(a, b, c);
+	float	areaABP = area(a, b, point);
+	float	areaAPC = area(a, point, c);
+	float	areaPBC = area(point, b, c);
+
+	return areaABC == (areaABP + areaAPC + areaPBC);
 }

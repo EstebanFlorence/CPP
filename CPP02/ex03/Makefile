@@ -1,4 +1,4 @@
-NAME		=	Fixed3
+NAME		=	bsp
 
 OBJ_DIR		=	./.obj/
 
