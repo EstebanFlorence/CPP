@@ -2,24 +2,24 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "ClapTrap " << _name << " default constructor" << std::endl;
+	std::cout << "ClapTrap " << _name << " has been created (Default Constructor)" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& copy)
 {
-	std::cout << "ClapTrap " << _name << " copy constructor" << std::endl;
+	std::cout << "ClapTrap " << _name << " has been created (Copy Constructor)" << std::endl;
 	*this = copy;
 }
 
 ClapTrap::ClapTrap(const std::string& name)
 : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(10)
 {
-	std::cout << "ClapTrap " << _name << " parameterized constructor" << std::endl;
+	std::cout << "ClapTrap " << _name << " has been created (Parameterized Constructor)" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap " << _name << " has been destroyed" << std::endl;
+	std::cout << "ClapTrap " << _name << " has been destroyed (Default Destructor)" << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
@@ -79,3 +79,5 @@ void	ClapTrap::beRepaired(unsigned int amount)
 			std::cout << " No energy points left!" << std::endl;
 	}
 }
+
+std::string	ClapTrap::getName() { return _name; }
