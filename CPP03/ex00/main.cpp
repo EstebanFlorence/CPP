@@ -2,10 +2,7 @@
 
 int	main()
 {
-//	int			n = 0;
 	std::string	input;
-	ClapTrap	attacker(input);
-	ClapTrap	defender(input);
 
 	std::cout << GREEN "ClapTrap1.0" CLR_RMV << std::endl;
 	while (42)
@@ -18,7 +15,9 @@ int	main()
 			std::cin.clear();
 			continue ;
 		}
-//		std::cin.ignore(1000, '\n');
+		else if (input == "q")
+			break;
+		ClapTrap	attacker(input);
 
 		std::cout << "Defender name > ";
 		std::getline(std::cin, input);
@@ -28,10 +27,12 @@ int	main()
 			std::cin.clear();
 			continue ;
 		}
-		break;
+		ClapTrap	defender(input);
+
+		attacker.attack(defender.getName());
+		defender.takeDamage(7);
+		defender.beRepaired(5);
 	}
-	attacker.attack(defender.getName());
-	defender.takeDamage(7);
-	defender.beRepaired(5);
+
 	return 0;
 }

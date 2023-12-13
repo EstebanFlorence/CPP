@@ -2,7 +2,7 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "ClapTrap " << _name << " has been created (Default Constructor)" << std::endl;
+	std::cout << "ClapTrap has been created (Default Constructor)" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& copy)
