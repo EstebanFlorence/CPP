@@ -6,7 +6,7 @@ SRCS		=   main.cpp	Harl.cpp
 
 OBJS        =	$(addprefix $(OBJ_DIR),$(notdir $(SRCS:.cpp=.o)))
 
-CC			=	g++
+CC			=	c++
 
 RM			=	rm -rf
 

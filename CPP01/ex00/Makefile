@@ -6,7 +6,7 @@ SRCS		=   main.cpp	Zombie.cpp	newZombie.cpp	randomChump.cpp
 
 OBJS        =	$(addprefix $(OBJ_DIR),$(notdir $(SRCS:.cpp=.o)))
 
-CC			=	g++
+CC			=	c++
 
 RM			=	rm -rf
 

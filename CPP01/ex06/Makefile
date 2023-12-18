@@ -6,11 +6,11 @@ SRCS		=   main.cpp	Harl.cpp
 
 OBJS        =	$(addprefix $(OBJ_DIR),$(notdir $(SRCS:.cpp=.o)))
 
-CXX			=	g++
+CXX			=	c++
 
 RM			=	rm -rf
 
-CXXFLAGS		=	-Wall -Wextra -Werror -g -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -g -std=c++98
 
 MAKEFLAGS	+=	--silent
 
