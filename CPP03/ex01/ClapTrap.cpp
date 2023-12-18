@@ -2,7 +2,7 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "ClapTrap has been created (Default Constructor)" << std::endl;
+	std::cout << "ClapTrap " << _name << " has been created (Default Constructor)" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& copy)
@@ -12,7 +12,7 @@ ClapTrap::ClapTrap(const ClapTrap& copy)
 }
 
 ClapTrap::ClapTrap(const std::string& name)
-: _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(10)
+: _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap " << _name << " has been created (Parameterized Constructor)" << std::endl;
 }

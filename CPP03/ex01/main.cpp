@@ -1,13 +1,13 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main()
 {
 	std::string	input;
 
-	std::cout << GREEN "ClapTrap1.0" CLR_RMV << std::endl;
+	std::cout << GREEN "ClapTrap2.0" CLR_RMV << std::endl;
 	while (42)
 	{
-		std::cout << "Attacker name > ";
+		std::cout << "ClapTrap name > ";
 		std::getline(std::cin, input);
 		if (input.empty())
 		{
@@ -17,9 +17,9 @@ int	main()
 		}
 		else if (input == "q")
 			break;
-		ClapTrap	attacker(input);
+		ClapTrap	clap(input);
 
-		std::cout << "Defender name > ";
+		std::cout << "ScavTrap name > ";
 		std::getline(std::cin, input);
 		if (input.empty())
 		{
@@ -27,12 +27,15 @@ int	main()
 			std::cin.clear();
 			continue ;
 		}
-		ClapTrap	defender(input);
+		ScavTrap	scav(input);
 
-		attacker.attack(defender.getName());
-		defender.takeDamage(7);
-		defender.beRepaired(5);
+		scav.guardGate();
+		clap.attack(scav.getName());
+		scav.takeDamage(0);
+		scav.attack(clap.getName());
+		clap.takeDamage(20);
 	}
+
 
 	return 0;
 }
