@@ -6,7 +6,7 @@ SRCS		=   main.cpp	Fixed.cpp	Point.cpp	bsp.cpp
 
 OBJS        =	$(addprefix $(OBJ_DIR),$(notdir $(SRCS:.cpp=.o)))
 
-CXX			=	g++
+CXX			=	c++
 
 RM			=	rm -rf
 

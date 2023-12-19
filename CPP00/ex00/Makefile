@@ -20,7 +20,7 @@ SRCS		=   megaphone.cpp
 
 OBJS        =	${patsubst ${SRC_DIR}/%.c,${OBJ_DIR}/%.o,${SRCS}}
 
-CC			=	g++
+CC			=	c++
 
 RM			=	rm -rf
 

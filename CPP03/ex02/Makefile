@@ -6,7 +6,7 @@ SRCS		=   main.cpp	ClapTrap.cpp	ScavTrap.cpp	FragTrap.cpp
 
 OBJS        =	$(addprefix $(OBJ_DIR),$(notdir $(SRCS:.cpp=.o)))
 
-CXX			=	g++
+CXX			=	c++
 
 RM			=	rm -rf
 
