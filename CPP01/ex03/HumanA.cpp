@@ -1,13 +1,10 @@
 #include "HumanA.hpp"
 
-HumanA::HumanA(const std::string &humanName, Weapon &Weapon)
+HumanA::HumanA(const std::string& humanName, Weapon& Weapon)
 : name(humanName), weapon(Weapon)
 {}
 
-HumanA::~HumanA()
-{
-
-}
+HumanA::~HumanA() {}
 
 void	HumanA::attack()
 {

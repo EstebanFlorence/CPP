@@ -1,18 +1,13 @@
 #include "HumanB.hpp"
 
-HumanB::HumanB(const std::string &humanName)
+HumanB::HumanB(const std::string& humanName)
 : name(humanName), weapon(NULL)
 {}
 
-HumanB::~HumanB()
-{ delete weapon; }
+HumanB::~HumanB() {}
 
-void	HumanB::setWeapon(Weapon &zeWeapon)
-{
-	if (weapon)
-		delete weapon;
-	weapon = new Weapon(zeWeapon);
-}
+void	HumanB::setWeapon(Weapon& zeWeapon)
+{ weapon = &zeWeapon; }
 
 void	HumanB::attack()
 {

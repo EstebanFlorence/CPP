@@ -9,5 +9,5 @@ Weapon::~Weapon() {}
 const std::string &Weapon::getType() const
 { return (type); }
 
-void	Weapon::setType(const std::string &weaponType)
+void	Weapon::setType(const std::string& weaponType)
 { type = weaponType; }
