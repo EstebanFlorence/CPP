@@ -10,16 +10,9 @@ CXX			=	c++
 
 RM			=	rm -rf
 
-CXXFLAGS	=	-Wall -Wextra -Werror -g -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -g -std=c++98 -Wshadow -Wno-shadow
 
 MAKEFLAGS	+=	--silent
-
-CLR_RMV		=	\033[0m
-RED		    =	\033[1;31m
-GREEN		=	\033[1;32m
-YELLOW		=	\033[1;33m
-BLUE		=	\033[1;34m
-CYAN 		=	\033[1;36m
 
 
 ${OBJ_DIR}%.o:	%.cpp
@@ -27,19 +20,19 @@ ${OBJ_DIR}%.o:	%.cpp
 				${CXX} ${CXXFLAGS} -c $< -o $@
 
 ${NAME}:		${OBJS}
-				@echo "${GREEN}Compilation ${CLR_RMV}of ${YELLOW}${NAME} ${CLR_RMV}..."
+				@echo "Compilation of ${NAME} ..."
 				${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME}
-				@echo "${GREEN}${NAME} created[0m ✔️"
+				@echo "${NAME} created[0m ✔️"
 
 all:			${NAME}
 
 clean:
-				@ echo "${RED}Deleting ${CYAN}${NAME} ${CLR_RMV}objs ✔️"
+				@ echo "Deleting ${NAME} objs ✔️"
 				@${RM} ${OBJ_DIR}
 
 
 fclean:			clean
-				@ echo "${RED}Deleting ${CYAN}${NAME} ${CLR_RMV}binary ✔️"
+				@ echo "Deleting ${NAME} binary ✔️"
 				@${RM} ${NAME}
 
 re:				fclean all

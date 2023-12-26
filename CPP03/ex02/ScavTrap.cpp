@@ -1,29 +1,29 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap()
+: ClapTrap()
 {
-	std::cout << "ScavTrap " << _name << " has been created (Default Constructor)" << std::endl;
+	std::cout << ITALIC "ScavTrap " << _name << " Default Constructor" CLR_RMV << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& copy)
-//: ClapTrap(copy)
 {
-	std::cout << "ScavTrap " << _name << " has been created (Copy Constructor)" << std::endl;
+	std::cout << ITALIC "ScavTrap " << _name << " Copy Constructor" CLR_RMV << std::endl;
 	*this = copy;	
 }
 
 ScavTrap::ScavTrap(const std::string& name)
 : ClapTrap(name)
 {
+	std::cout << ITALIC "ScavTrap " << _name << " Parameterized Constructor" CLR_RMV << std::endl;
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
-	std::cout << "ScavTrap " << _name << " has been created (Parameterized Constructor)" << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap " << _name << " has been destroyed (Default Destructor)" << std::endl;
+	std::cout << ITALIC "ScavTrap " << _name << " Default Destructor" CLR_RMV << std::endl;
 }
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap& other)
@@ -40,5 +40,5 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& other)
 
 void	ScavTrap::guardGate()
 {
-    std::cout << "ScavTrap " << _name << " is now in Gatekeeper mode!" << std::endl;
+    std::cout << BOLD "ScavTrap " << _name << " is now in Gatekeeper mode!" CLR_RMV << std::endl;
 }

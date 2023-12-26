@@ -4,18 +4,22 @@
 # include <iostream>
 # include <string>
 
+# define ITALIC "\033[3m"
+# define BOLD "\033[1m"
+# define UNDERLINE "\033[4m"
 # define CLR_RMV "\033[0m"
-# define RED "\033[1;31m"
 # define GREEN "\033[1;32m"
-# define GREEN_DARK "\033[0;32m"
+# define RED "\033[1;31m"
 # define YELLOW "\033[1;33m"
+# define CYAN "\033[1;36m"
 # define BLUE "\033[1;34m"
 # define PURPLE "\033[1;35m"
-# define CYAN "\033[1;36m"
+# define MAGENTA "\033[1;95m"
+# define PINK "\033[1;95m"
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string		_name;
 		unsigned int	_hitPoints;
 		unsigned int	_energyPoints;

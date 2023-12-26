@@ -2,24 +2,24 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "ClapTrap " << _name << " has been created (Default Constructor)" << std::endl;
+	std::cout << ITALIC "ClapTrap " << _name << " Default Constructor" CLR_RMV << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& copy)
 {
-	std::cout << "ClapTrap " << _name << " has been created (Copy Constructor)" << std::endl;
+	std::cout << "ClapTrap " << _name << " Copy Constructor" CLR_RMV << std::endl;
 	*this = copy;
 }
 
 ClapTrap::ClapTrap(const std::string& name)
 : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
-	std::cout << "ClapTrap " << _name << " has been created (Parameterized Constructor)" << std::endl;
+	std::cout << ITALIC "ClapTrap " << _name << " Parameterized Constructor" CLR_RMV << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap " << _name << " has been destroyed (Default Destructor)" << std::endl;
+	std::cout << ITALIC "ClapTrap " << _name << " Default Destructor" CLR_RMV << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
@@ -38,16 +38,17 @@ void	ClapTrap::attack(const std::string& target)
 {
 	if (_hitPoints > 0 && _energyPoints > 0)
 	{
-		std::cout << "ClapTrap " << _name << " attacks " << target << " causing " << _attackDamage << " points of damage!" << std::endl;
+		std::cout << BOLD "ClapTrap " << _name << " attacks " << target << " causing " << _attackDamage << " points of damage!" CLR_RMV << std::endl;
 		_energyPoints--;
 	}
 	else
 	{
-        std::cout << "ClapTrap " << _name << " can't be repaired.";
+        std::cout << BOLD "ClapTrap " << _name << " can't be repaired.";
 		if (!_hitPoints)
 			std::cout << " No hit points left!" << std::endl;
 		if (!_energyPoints)
 			std::cout << " No energy points left!" << std::endl;
+		std::cout << CLR_RMV << std::flush;
 	}
 }
 
@@ -56,10 +57,10 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	if (_hitPoints > 0)
 	{
 		_hitPoints = (amount > _hitPoints) ? 0 : _hitPoints - amount;
-        std::cout << "ClapTrap " << _name << " takes " << amount << " points of damage! Remaining hit points: " << _hitPoints << std::endl;
+        std::cout << BOLD "ClapTrap " << _name << " takes " << amount << " points of damage! Remaining hit points: " << _hitPoints << CLR_RMV << std::endl;
 	}
 	else
-        std::cout << "ClapTrap " << _name << " is already dead!" << std::endl;
+        std::cout << BOLD "ClapTrap " << _name << " is already dead!" CLR_RMV << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
@@ -68,15 +69,16 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	{
 		_hitPoints += amount;
 		_energyPoints--;
-        std::cout << "ClapTrap " << _name << " is repaired for " << amount << " points! Hit points: " << _hitPoints << std::endl;
+        std::cout << BOLD "ClapTrap " << _name << " is repaired for " << amount << " points! Hit points: " << _hitPoints << CLR_RMV << std::endl;
 	}
 	else
 	{
-        std::cout << "ClapTrap " << _name << " can't be repaired.";
+        std::cout << BOLD "ClapTrap " << _name << " can't be repaired.";
 		if (!_hitPoints)
-			std::cout << " No hit points left!" << std::endl;
+			std::cout <<" No hit points left!" << std::endl;
 		if (!_energyPoints)
 			std::cout << " No energy points left!" << std::endl;
+		std::cout << CLR_RMV << std::flush;
 	}
 }
 

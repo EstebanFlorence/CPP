@@ -7,20 +7,22 @@ int	main()
 	std::cout << GREEN "ClapTrap1.0" CLR_RMV << std::endl;
 	while (42)
 	{
-		std::cout << "Attacker name > ";
+		std::cout << BLUE "Attacker name > ";
 		std::getline(std::cin, input);
+		std::cout << CLR_RMV << std::flush;
 		if (input.empty())
 		{
 			std::cout << "\r\033[A\33[2K";
 			std::cin.clear();
 			continue ;
 		}
-		else if (input == "q")
+		else if (input == "exit")
 			break;
 		ClapTrap	attacker(input);
 
-		std::cout << "Defender name > ";
+		std::cout << MAGENTA "Defender name > ";
 		std::getline(std::cin, input);
+		std::cout << CLR_RMV << std::flush;
 		if (input.empty())
 		{
 			std::cout << "\r\033[A\33[2K";
