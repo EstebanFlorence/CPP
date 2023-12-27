@@ -65,7 +65,7 @@ int	main()
 		scav.takeDamage(0);
 		frag.highFivesGuys();
 
-		std::cout << "Ok? [Y/N]" << std::endl;
+		std::cout << "Ok? [Y/...]" << std::endl;
 		std::getline(std::cin, input);
 		if (input == "y" || input == "Y" || input == "yes")
 			break ;

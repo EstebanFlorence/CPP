@@ -83,7 +83,7 @@ int	main()
 		frag.highFivesGuys();
 		diamond.whoAmI();
 
-		std::cout << "Ok? [Y/N]" << std::endl;
+		std::cout << "Ok? [Y/...]" << std::endl;
 		std::getline(std::cin, input);
 		if (input == "y" || input == "Y" || input == "yes")
 			break ;
