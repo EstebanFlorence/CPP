@@ -8,7 +8,8 @@ int	main()
 
 	std::cout << "Memory address of stringVAR: " << &stringVAR << std::endl;
 	std::cout << "Memory address held by stringPTR: " << stringPTR << std::endl;
-	std::cout << "Memory address held by stringREF: " << &stringREF << std::endl;
+//	std::cout << "Memory address of stringPTR: " << &stringPTR << std::endl;
+	std::cout << "Memory address held by stringREF: " << &stringVAR << std::endl;
 
 	std::cout << "Value of stringVAR: " << stringVAR << std::endl;
 	std::cout << "Value pointed to by stringPTR: " << *stringPTR << std::endl;
