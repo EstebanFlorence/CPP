@@ -6,14 +6,14 @@
 
 int	replaceInFile(const std::string& filename, const std::string& s1, const std::string& s2)
 {
-	std::ifstream	inputFile(filename);
+	std::ifstream	inputFile(filename.c_str());
 	if (!inputFile.is_open())
 	{
 		std::cerr << "Error opening " << filename << std::endl;
 		return 1;
 	}
 
-	std::ofstream	outputFile(filename + ".replace");
+	std::ofstream	outputFile((filename + ".replace").c_str());
 	if (!outputFile.is_open())
 	{
 		inputFile.close();
