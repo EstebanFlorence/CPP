@@ -32,3 +32,6 @@ void	Cat::makeSound() const
 {
 	std::cout << "IRMIAO!" << std::endl;
 }
+
+Brain*	Cat::getBrain() const
+{ return brain; }

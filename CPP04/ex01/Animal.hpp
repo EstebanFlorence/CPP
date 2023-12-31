@@ -3,6 +3,8 @@
 
 # include <iostream>
 # include <string>
+# include <sstream>
+# include "Brain.hpp"
 
 # define ITALIC "\033[3m"
 # define BOLD "\033[1m"
@@ -20,8 +22,10 @@ class	Animal
 
 		Animal&	operator=(const Animal& other);
 
-		virtual void		makeSound() const;
 		const std::string&	getType() const;
+
+		virtual void		makeSound() const;
+		virtual Brain*		getBrain() const = 0;
 };
 
 #endif

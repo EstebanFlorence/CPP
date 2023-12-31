@@ -25,3 +25,6 @@ Brain&	Brain::operator=(const Brain& other)
 		this->ideas[i] = other.ideas[i];
 	return *this;
 }
+
+int	Brain::getMaxIdeas() const
+{ return numOfIdeas; }

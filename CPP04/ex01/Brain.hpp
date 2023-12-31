@@ -12,7 +12,6 @@ class	Brain
 {
 	private:
 		static const int	numOfIdeas = 100;
-		std::string			ideas[numOfIdeas];
 
 	public:
 		Brain();
@@ -20,6 +19,11 @@ class	Brain
 		~Brain();
 
 		Brain&	operator=(const Brain& other);
+
+		int		getMaxIdeas() const;
+
+	public:
+		std::string		ideas[numOfIdeas];
 
 };
 
