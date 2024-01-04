@@ -1,4 +1,4 @@
-NAME		=	Animal2
+NAME		=	Animals_2
 
 OBJ_DIR		=	./.obj/
 

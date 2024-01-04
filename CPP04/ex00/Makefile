@@ -1,4 +1,4 @@
-NAME		=	Animal1
+NAME		=	Animals_1
 
 OBJ_DIR		=	./.obj/
 
@@ -37,7 +37,7 @@ fclean:			clean
 
 re:				fclean all
 
-run:			all
+run:			re
 				./${NAME}
 
 .PHONY:			all clean fclean re bonus

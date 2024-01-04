@@ -1,3 +1,4 @@
+#include <sstream>
 #include "Dog.hpp"
 #include "Cat.hpp"
 
@@ -11,7 +12,7 @@ int main()
 	// delete i;
 
 	const Animal*	animals[NUM_OF_ANIMALS];
-	Brain*	brain[NUM_OF_ANIMALS];
+	// Brain*		brain[NUM_OF_ANIMALS];
 
 	for (int i = 0; i < NUM_OF_ANIMALS; i++)
 	{
@@ -20,13 +21,14 @@ int main()
 		std::cout << animals[i]->getType() << " " << i + 1 << ":" << std::endl;
 		animals[i]->makeSound();
 
-		brain[i] = animals[i]->getBrain();
-		for (int j = 0; j < brain[i]->getMaxIdeas(); j++)
+		// brain[i] = animals[i]->getBrain();
+		Brain* brain = animals[i]->getBrain();
+		for (int j = 0; j < brain->getMaxIdeas(); j++)
 		{
 			std::stringstream	ss;
 			ss << "Idea n. " << j + 1;
-			brain[i]->ideas[j] = ss.str();
-			std::cout << brain[i]->ideas[j] << std::endl;
+			brain->ideas[j] = ss.str();
+			std::cout << brain->ideas[j] << std::endl;
 		}
 	}
 

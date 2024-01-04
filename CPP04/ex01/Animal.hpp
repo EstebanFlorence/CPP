@@ -3,7 +3,6 @@
 
 # include <iostream>
 # include <string>
-# include <sstream>
 # include "Brain.hpp"
 
 # define ITALIC "\033[3m"
