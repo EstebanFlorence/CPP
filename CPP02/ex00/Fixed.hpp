@@ -3,6 +3,10 @@
 
 # include <iostream>
 
+# define ITALIC "\033[3m"
+# define BOLD "\033[1m"
+# define CLR_RMV "\033[0m"
+
 class	Fixed
 {
 	private:
