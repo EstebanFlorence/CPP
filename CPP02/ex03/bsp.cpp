@@ -4,7 +4,7 @@ Fixed	area(const Point& a, const Point& b, const Point& c)
 {
 	return (a.getX() * (b.getY() - c.getY()) +
 			b.getX() * (c.getY() - a.getY()) +
-			c.getX() * (a.getY() - b.getY())).abs().toFloat() / 2;
+			c.getX() * (a.getY() - b.getY())).abs() / Fixed(2);
 }
 
 bool bsp( Point const a, Point const b, Point const c, Point const point)
@@ -14,5 +14,5 @@ bool bsp( Point const a, Point const b, Point const c, Point const point)
 	Fixed	areaAPC = area(a, point, c);
 	Fixed	areaPBC = area(point, b, c);
 
-	return areaABC == (areaABP + areaAPC + areaPBC);
+	return areaABC.toFloat() >= (areaABP.toFloat() + areaAPC.toFloat() + areaPBC.toFloat());
 }
