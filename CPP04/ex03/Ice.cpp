@@ -14,15 +14,21 @@ Ice::Ice(const Ice& copy)
 
 Ice::~Ice()
 {
-	std::cout << ITALIC "Ice Default Destructor" CLR_RMV << std::endl;
+	std::cout << ITALIC "Ice Destructor" CLR_RMV << std::endl;
 }
 
 Ice&	Ice::operator=(const Ice& other)
 {
+	std::cout << ITALIC "Ice Copy Assignment operator" CLR_RMV << std::endl;
 	if (this != &other)
 		AMateria::operator=(other);
 	return *this;
 }
 
-Ice*	Ice::clone() const
+AMateria*	Ice::clone() const
 { return new Ice(*this); }
+
+void	Ice::use(ICharacter& target)
+{
+	std::cout << BOLD "* shoots an ice bolt at " << target.getName() << " *" CLR_RMV << std::endl;
+}

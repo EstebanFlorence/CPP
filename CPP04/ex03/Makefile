@@ -2,11 +2,7 @@ NAME		=	Interface
 
 OBJ_DIR		=	./.obj/
 
-SRCS		=   main.cpp\
-				AMateria.cpp		Ice.cpp				Cure.cpp\
-				ICharacter.cpp		Character.cpp\
-				IMateriaSource.cpp	MateriaSource.cpp
-
+SRCS		=   main.cpp AMateria.cpp Ice.cpp Cure.cpp MateriaSource.cpp Character.cpp
 
 OBJS        =	$(addprefix $(OBJ_DIR),$(notdir $(SRCS:.cpp=.o)))
 

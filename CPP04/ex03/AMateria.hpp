@@ -2,12 +2,15 @@
 # define AMATERIA_HPP
 
 # include <iostream>
+# include"ICharacter.hpp"
 
 # define ITALIC "\033[3m"
 # define BOLD "\033[1m"
 # define CLR_RMV "\033[0m"
 
-class AMateria
+class	ICharacter;
+
+class	AMateria
 {
 	protected:
 		std::string	type;
@@ -23,7 +26,7 @@ class AMateria
 		const std::string&	getType() const;
 
 		virtual AMateria*	clone() const = 0;
-		// virtual void		use();
+		virtual void		use(ICharacter& target);
 };
 
 #endif

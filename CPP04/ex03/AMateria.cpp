@@ -12,17 +12,19 @@ AMateria::AMateria(const AMateria& copy)
 }
 
 AMateria::AMateria(const std::string& type)
+: type(type)
 {
-	std::cout << ITALIC "AMateria Parameterized Constructor: " << this->type << CLR_RMV << std::endl;
+	std::cout << ITALIC << getType() << " AMateria Parameterized Constructor" CLR_RMV << std::endl;
 }
 
 AMateria::~AMateria()
 {
-	std::cout << ITALIC "AMateria Default Destructor" CLR_RMV << std::endl;
+	std::cout << ITALIC << getType() << " AMateria Destructor" CLR_RMV << std::endl;
 }
 
 AMateria&	AMateria::operator=(const AMateria& other)
 {
+	std::cout << ITALIC << getType() << " AMateria Copy Assignment operator" CLR_RMV << std::endl;
 	if (this != &other)
 		this->type = other.type;
 	return *this;
@@ -31,7 +33,7 @@ AMateria&	AMateria::operator=(const AMateria& other)
 const std::string&	AMateria::getType() const
 { return  type; }
 
-// void	AMateria::use()
-// {
-
-// }
+void	AMateria::use(ICharacter& target)
+{
+	std::cout << BOLD "* uses " << type << "at " << target.getName() << " *" CLR_RMV << std::endl;
+}
