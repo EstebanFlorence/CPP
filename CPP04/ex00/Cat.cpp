@@ -15,7 +15,7 @@ Cat::Cat(const Cat& copy)
 
 Cat::~Cat()
 {
-	std::cout << ITALIC "Cat Default Destructor" CLR_RMV << std::endl;
+	std::cout << ITALIC "Cat Destructor" CLR_RMV << std::endl;
 }
 
 Cat&	Cat::operator=(const Cat& other)

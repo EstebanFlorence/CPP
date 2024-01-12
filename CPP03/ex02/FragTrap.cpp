@@ -22,7 +22,7 @@ FragTrap::FragTrap(const std::string& name)
 
 FragTrap::~FragTrap()
 {
-	std::cout << ITALIC "FragTrap " << _name << " Default Destructor" CLR_RMV << std::endl;
+	std::cout << ITALIC "FragTrap " << _name << " Destructor" CLR_RMV << std::endl;
 }
 
 FragTrap&	FragTrap::operator=(const FragTrap& other)

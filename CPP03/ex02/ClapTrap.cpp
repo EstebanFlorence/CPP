@@ -19,7 +19,7 @@ ClapTrap::ClapTrap(const std::string& name)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << ITALIC "ClapTrap " << _name << " Default Destructor" CLR_RMV << std::endl;
+	std::cout << ITALIC "ClapTrap " << _name << " Destructor" CLR_RMV << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
@@ -82,4 +82,8 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	}
 }
 
-std::string	ClapTrap::getName() { return _name; }
+std::string	ClapTrap::getName()
+{ return _name; }
+
+unsigned int	ClapTrap::getAttackDamage()
+{ return _attackDamage; }

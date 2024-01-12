@@ -88,6 +88,7 @@ void	Character::use(int idx, ICharacter& target)
 		return ;
 	if (inventory[idx])
 	{
+		std::cout << BOLD << getName() << ": " CLR_RMV << std::flush;
 		inventory[idx]->use(target);
 		unequip(idx);
 	}

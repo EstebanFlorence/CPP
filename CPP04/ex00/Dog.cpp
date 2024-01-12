@@ -14,7 +14,7 @@ Dog::Dog(const Dog& copy)
 
 Dog::~Dog()
 {
-	std::cout << ITALIC "Dog Default Destructor" CLR_RMV << std::endl;
+	std::cout << ITALIC "Dog Destructor" CLR_RMV << std::endl;
 }
 
 Dog&	Dog::operator=(const Dog& other)

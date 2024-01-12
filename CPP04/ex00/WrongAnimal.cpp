@@ -14,7 +14,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal& copy)
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << ITALIC "WrongAnimal Default Destructor" CLR_RMV << std::endl;
+	std::cout << ITALIC "WrongAnimal Destructor" CLR_RMV << std::endl;
 }
 
 WrongAnimal&	WrongAnimal::operator=(const WrongAnimal& other)

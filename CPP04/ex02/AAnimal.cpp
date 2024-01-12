@@ -14,7 +14,7 @@ AAnimal::AAnimal(const AAnimal& copy)
 
 AAnimal::~AAnimal()
 {
-	std::cout << ITALIC "AAnimal Default Destructor" CLR_RMV << std::endl;
+	std::cout << ITALIC "AAnimal Destructor" CLR_RMV << std::endl;
 }
 
 AAnimal&	AAnimal::operator=(const AAnimal& other)

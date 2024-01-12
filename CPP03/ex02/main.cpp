@@ -53,7 +53,7 @@ int	main()
 {
 	std::string	input;
 
-	std::cout << GREEN "ClapTrap3.0" CLR_RMV << std::endl;
+	std::cout << ORANGE "ClapTrap 3.0" CLR_RMV << std::endl;
 	while (42)
 	{
 		ClapTrap	clap = ClapInnit(input);
@@ -65,7 +65,7 @@ int	main()
 		scav.takeDamage(0);
 		frag.highFivesGuys();
 
-		std::cout << "Ok? [Y/...]" << std::endl;
+		std::cout << "The End? [Y/...]" << std::endl;
 		std::getline(std::cin, input);
 		if (input == "y" || input == "Y" || input == "yes")
 			break ;

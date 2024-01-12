@@ -23,7 +23,7 @@ ScavTrap::ScavTrap(const std::string& name)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << ITALIC "ScavTrap " << _name << " Default Destructor" CLR_RMV << std::endl;
+	std::cout << ITALIC "ScavTrap " << _name << " Destructor" CLR_RMV << std::endl;
 }
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap& other)

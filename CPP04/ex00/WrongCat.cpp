@@ -15,7 +15,7 @@ WrongCat::WrongCat(const WrongCat& copy)
 
 WrongCat::~WrongCat()
 {
-	std::cout << ITALIC "WrongCat Default Destructor" CLR_RMV << std::endl;
+	std::cout << ITALIC "WrongCat Destructor" CLR_RMV << std::endl;
 }
 
 WrongCat&	WrongCat::operator=(const WrongCat& other)

@@ -22,7 +22,7 @@ DiamondTrap::DiamondTrap(const std::string& name)
 
 DiamondTrap::~DiamondTrap()
 {
-	std::cout << ITALIC "DiamondTrap " << _name << " Default Destructor" CLR_RMV << std::endl;
+	std::cout << ITALIC "DiamondTrap " << _name << " Destructor" CLR_RMV << std::endl;
 }
 
 DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& other)

@@ -2,7 +2,7 @@
 
 ScavTrap	ScavInnit(std::string& input)
 {
-	std::cout << BLUE "ScavTrap name > ";
+	std::cout << MAGENTA "ScavTrap name > ";
 	std::getline(std::cin, input);
 	if (input.empty())
 	{
@@ -18,7 +18,7 @@ ScavTrap	ScavInnit(std::string& input)
 
 ClapTrap	ClapInnit(std::string& input)
 {
-	std::cout << YELLOW "ClapTrap name > ";
+	std::cout << CYAN "ClapTrap name > ";
 	std::getline(std::cin, input);
 	if (input.empty())
 	{
@@ -36,7 +36,7 @@ int	main()
 {
 	std::string	input;
 
-	std::cout << GREEN "ClapTrap2.0" CLR_RMV << std::endl;
+	std::cout << ORANGE "ClapTrap 2.0" CLR_RMV << std::endl;
 	while (42)
 	{
 		ClapTrap	clap = ClapInnit(input);
@@ -44,11 +44,11 @@ int	main()
 
 		scav.guardGate();
 		clap.attack(scav.getName());
-		scav.takeDamage(0);
+		scav.takeDamage(clap.getAttackDamage());
 		scav.attack(clap.getName());
-		clap.takeDamage(20);
+		clap.takeDamage(scav.getAttackDamage());
 
-		std::cout << "Ok? [Y/...]" << std::endl;
+		std::cout << "The End? [Y/...]" << std::endl;
 		std::getline(std::cin, input);
 		if (input == "y" || input == "Y" || input == "yes")
 			break ;

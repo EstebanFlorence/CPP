@@ -120,7 +120,6 @@ Fixed	Fixed::operator/(const Fixed& other) const
 	return result;
 }
 
-// Increment / Decrement operators
 Fixed&	Fixed::operator++()
 {
 	this->fixedPointVal++;

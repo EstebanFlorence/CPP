@@ -14,7 +14,7 @@ Brain::Brain(const Brain& copy)
 
 Brain::~Brain()
 {
-	std::cout << ITALIC "Brain Default Destructor" CLR_RMV << std::endl;
+	std::cout << ITALIC "Brain Destructor" CLR_RMV << std::endl;
 }
 
 Brain&	Brain::operator=(const Brain& other)

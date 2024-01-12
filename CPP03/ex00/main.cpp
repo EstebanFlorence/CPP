@@ -4,12 +4,11 @@ int	main()
 {
 	std::string	input;
 
-	std::cout << GREEN "ClapTrap1.0" CLR_RMV << std::endl;
+	std::cout << GREEN "ClapTrap 1.0" CLR_RMV << std::endl;
 	while (42)
 	{
-		std::cout << BLUE "Attacker name > ";
+		std::cout << BLUE "Attacker name" CLR_RMV " > " << std::flush;
 		std::getline(std::cin, input);
-		std::cout << CLR_RMV << std::flush;
 		if (input.empty())
 		{
 			std::cout << "\r\033[A\33[2K";
@@ -20,9 +19,8 @@ int	main()
 			break;
 		ClapTrap	attacker(input);
 
-		std::cout << MAGENTA "Defender name > ";
+		std::cout << RED "Defender name" CLR_RMV " > " << std::flush;
 		std::getline(std::cin, input);
-		std::cout << CLR_RMV << std::flush;
 		if (input.empty())
 		{
 			std::cout << "\r\033[A\33[2K";
@@ -32,7 +30,7 @@ int	main()
 		ClapTrap	defender(input);
 
 		attacker.attack(defender.getName());
-		defender.takeDamage(7);
+		defender.takeDamage(attacker.getAttackDamage());
 		defender.beRepaired(5);
 	}
 
