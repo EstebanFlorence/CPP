@@ -3,8 +3,9 @@
 Cat::Cat()
 : brain(new Brain())
 {
-	std::cout << ITALIC "Cat Default Constructor" CLR_RMV << std::endl;
-	_type = "Cat";
+	std::cout << "Cat Default Constructor" CLR_RMV << std::endl;
+	AAnimal::_type = "Cat";
+	_type = "Gato Carioca";
 }
 
 Cat::Cat(const Cat& copy)
@@ -23,8 +24,8 @@ Cat&	Cat::operator=(const Cat& other)
 {
 	if (this == &other)
 		return *this;
-	this->_type = other._type;
-	this->brain = other.brain;
+	AAnimal::operator=(other);
+	this->brain = new Brain(*other.brain);
 	return *this;
 }
 

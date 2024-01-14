@@ -1,10 +1,10 @@
 #include "Cat.hpp"
 
 Cat::Cat()
-//: _type("Cat")
 {
-	std::cout << ITALIC "Cat Default Constructor" CLR_RMV << std::endl;
-	_type = "Cat";
+	std::cout << "Cat Default Constructor" CLR_RMV << std::endl;
+	Animal::_type = "Cat";
+	_type = "Gato Carioca";
 }
 
 Cat::Cat(const Cat& copy)
@@ -21,7 +21,7 @@ Cat::~Cat()
 Cat&	Cat::operator=(const Cat& other)
 {
 	if (this != &other)
-		this->_type = other._type;
+		Animal::operator=(other);
 	return *this;
 }
 

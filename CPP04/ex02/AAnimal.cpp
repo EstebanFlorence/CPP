@@ -3,7 +3,7 @@
 AAnimal::AAnimal()
 : _type("Generic AAnimal")
 {
-	std::cout << ITALIC "AAnimal Default Constructor" CLR_RMV << std::endl;
+	std::cout << ITALIC << getType() << "Default Constructor" CLR_RMV << std::endl;
 }
 
 AAnimal::AAnimal(const AAnimal& copy)
@@ -20,7 +20,7 @@ AAnimal::~AAnimal()
 AAnimal&	AAnimal::operator=(const AAnimal& other)
 {
 	if (this != &other)
-		this->_type = other._type;
+		AAnimal::operator=(other);
 	return *this;
 }
 

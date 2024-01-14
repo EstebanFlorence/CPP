@@ -3,7 +3,7 @@
 Animal::Animal()
 : _type("Generic Animal")
 {
-	std::cout << ITALIC "Animal Default Constructor" CLR_RMV << std::endl;
+	std::cout << ITALIC << getType() << "Default Constructor" CLR_RMV << std::endl;
 }
 
 Animal::Animal(const Animal& copy)

@@ -20,7 +20,7 @@ class	WrongAnimal
 
 		WrongAnimal&	operator=(const WrongAnimal& other);
 
-		void		makeSound() const;	// non virtual
+		void				makeSound() const;	// non virtual
 		const std::string&	getType() const;
 };
 

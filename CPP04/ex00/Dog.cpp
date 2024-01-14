@@ -3,7 +3,8 @@
 Dog::Dog()
 {
 	std::cout << ITALIC "Dog Default Constructor" CLR_RMV << std::endl;
-	_type = "Dog";
+	Animal::_type = "Dog";
+	_type = "Cane Catanese";
 }
 
 Dog::Dog(const Dog& copy)
@@ -20,7 +21,7 @@ Dog::~Dog()
 Dog&	Dog::operator=(const Dog& other)
 {
 	if (this != &other)
-		this->_type = other._type;
+		Animal::operator=(other);
 	return *this;
 }
 

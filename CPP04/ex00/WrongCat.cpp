@@ -1,7 +1,6 @@
 #include "WrongCat.hpp"
 
 WrongCat::WrongCat()
-//: _type("WrongCat")
 {
 	std::cout << ITALIC "WrongCat Default Constructor" CLR_RMV << std::endl;
 	_type = "WrongCat";
@@ -21,7 +20,7 @@ WrongCat::~WrongCat()
 WrongCat&	WrongCat::operator=(const WrongCat& other)
 {
 	if (this != &other)
-		this->_type = other._type;
+		WrongAnimal::operator=(other);
 	return *this;
 }
 

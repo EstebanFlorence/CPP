@@ -4,7 +4,8 @@ Dog::Dog()
 : brain(new Brain())
 {
 	std::cout << ITALIC "Dog Default Constructor" CLR_RMV << std::endl;
-	_type = "Dog";
+	Animal::_type = "Dog";
+	_type = "Cane Catanese";
 }
 
 Dog::Dog(const Dog& copy)
@@ -23,8 +24,8 @@ Dog&	Dog::operator=(const Dog& other)
 {
 	if (this == &other)
 		return *this;
-	this->_type = other._type;
-	this->brain = other.brain;
+	Animal::operator=(other);
+	this->brain = new Brain(*other.brain);
 	return *this;
 }
 
@@ -32,6 +33,3 @@ void	Dog::makeSound() const
 {
 	std::cout << "MBAURE!" << std::endl;
 }
-
-Brain*	Dog::getBrain() const
-{ return brain; }
