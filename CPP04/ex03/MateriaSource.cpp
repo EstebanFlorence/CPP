@@ -1,6 +1,7 @@
 #include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource()
+: learnedMaterias(0)
 {
 	std::cout << ITALIC "MateriaSource Default Constructor" CLR_RMV << std::endl;
 	for (int i = 0; i < materiaSize; i++)
@@ -28,6 +29,7 @@ MateriaSource&	MateriaSource::operator=(const MateriaSource& other)
 	std::cout << ITALIC "MateriaSource Copy Assignment operator" CLR_RMV << std::endl;
 	if (this == &other)
 		return *this;
+	this->learnedMaterias = other.learnedMaterias;
 	for (int i = 0; i < materiaSize; i++)
 	{
 		if (this->materias[i])

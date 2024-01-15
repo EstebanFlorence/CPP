@@ -6,6 +6,9 @@
 
 int main()
 {
+
+	// AAnimal	test;	should give a compile error
+
 	const AAnimal*	animals[NUM_OF_ANIMALS];
 
 	for (int i = 0; i < NUM_OF_ANIMALS; i++)
