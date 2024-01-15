@@ -26,13 +26,13 @@ void	Bureaucrat::checkGrade() const
 	if (_grade < MAX_GRADE)
 		throw GradeTooHighException();
 	else if (_grade > MIN_GRADE)
-		throw GradeTooLowException("Grade too low");
+		throw GradeTooLowException();
 }
 
 const std::string&	Bureaucrat::getName() const
 { return _name; }
 
-const int	Bureaucrat::getGrade() const
+int	Bureaucrat::getGrade() const
 { return _grade; }
 
 void	Bureaucrat::promote(const int grades)
@@ -56,7 +56,7 @@ Bureaucrat::GradeTooHighException::GradeTooHighException(const std::string& msg)
 : _msg(msg)
 {}
 
-Bureaucrat::GradeTooHighException::~GradeTooHighException() {}
+Bureaucrat::GradeTooHighException::~GradeTooHighException() throw() {}
 
 const char*	Bureaucrat::GradeTooHighException::what() const throw()
 { return _msg.c_str(); }
@@ -70,7 +70,7 @@ Bureaucrat::GradeTooLowException::GradeTooLowException(const std::string& msg)
 : _msg(msg)
 {}
 
-Bureaucrat::GradeTooLowException::~GradeTooLowException() {}
+Bureaucrat::GradeTooLowException::~GradeTooLowException() throw() {}
 
 const char*	Bureaucrat::GradeTooLowException::what() const throw()
 { return _msg.c_str(); }
