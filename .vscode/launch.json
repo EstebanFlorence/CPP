@@ -4,7 +4,7 @@
 			"name": "(lldb) Launch",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/CPP05/ex00/./Bureaucrat",
+			"program": "${workspaceFolder}/CPP05/ex01/Bureaucrat2",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",

@@ -47,6 +47,20 @@ void	Bureaucrat::demote(const int grades)
 	checkGrade();
 }
 
+void	Bureaucrat::signForm(Form& form) const
+{
+	std::cout << *this << " ";
+	try
+	{
+		form.beSigned(*this);
+		std::cout << "Signed " << form.getName() << std::endl;
+	}
+	catch (std::exception& ex)
+	{
+		std::cout << "Couldn't sign " << form.getName() << " because: " << ex.what() << std::endl;
+	}
+}
+
 
 Bureaucrat::GradeTooHighException::GradeTooHighException()
 : _msg("Grade too high!")
@@ -74,7 +88,6 @@ Bureaucrat::GradeTooLowException::~GradeTooLowException() throw() {}
 
 const char*	Bureaucrat::GradeTooLowException::what() const throw()
 { return _msg.c_str(); }
-
 
 
 std::ostream&	operator<<(std::ostream& os, const Bureaucrat& other)
