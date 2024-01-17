@@ -1,15 +1,16 @@
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat()
-: _name("NPCBureaucrat"), _grade(MIN_GRADE / 2)
+: _name("MidBureaucrat"), _grade(MIN_GRADE / 2)
 {}
 
 Bureaucrat::Bureaucrat(const Bureaucrat& copy)
+: _name(copy._name)
 { *this = copy; }
 
 Bureaucrat::Bureaucrat(const std::string& name, const int grade)
 : _name(name), _grade(grade)
-{}
+{ checkGrade(); }
 
 Bureaucrat::~Bureaucrat() {}
 
