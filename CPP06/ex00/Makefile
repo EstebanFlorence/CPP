@@ -12,6 +12,8 @@ RM			=	rm -rf
 
 CXXFLAGS	=	-Wall -Wextra -Werror -g -std=c++98
 
+# ARGS		=	
+
 MAKEFLAGS	+=	--silent
 
 
