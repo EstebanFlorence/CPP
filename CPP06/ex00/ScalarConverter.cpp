@@ -14,32 +14,120 @@ ScalarConerter&	ScalarConerter::operator=(const ScalarConerter& other)
 	return *this;
 }
 
-void	ScalarConerter::stoc(const std::string& literal)
+
+bool	ScalarConerter::isDouble(const std::string& literal)
 {
-	if (isValidChar(literal))
-		std::cout << "char : \'" << literal[0] << "\'" << std::endl;
-	else
-		std::cout << "char : Non displayable" << std::endl;
+	
+}
+
+bool	ScalarConerter::isFloat(const std::string& literal)
+{
+	
+}
+
+bool	ScalarConerter::isInt(const std::string& literal)
+{
 
 }
 
-bool	ScalarConerter::isValidChar(const std::string& literal)
+bool	ScalarConerter::isChar(const std::string& literal)
 {
-	if (literal.size() == 1)
+	if (!literal.size())
+		return false;
+	for  (size_t i = 0; i < literal.size(); i++)
 	{
-		if (literal[0] < 32 || literal[0] > 126)
+		if (i >= 3 || literal[i] < 32 || literal[i] > 126)
 			return false;
 	}
 	return true;
 }
 
+
+double	ScalarConerter::convertDouble(const std::string& literal)
+{
+
+}
+
+float	ScalarConerter::convertFloat(const std::string& literal)
+{
+	
+}
+
+int	ScalarConerter::convertInt(const std::string& literal)
+{
+	
+}
+
+char	ScalarConerter::convertChar(const std::string& literal)
+{
+	char	c = '\0';
+
+	if (!isChar(literal))
+		return c;
+	size_t	isDigit = 0;
+	for (size_t i = 0; i < literal.size(); i++)
+	{
+		if (std::isdigit(literal[i]))
+			isDigit++;
+	}
+	if (isDigit == literal.size())
+	{
+		int tmp = std::atoi(literal.c_str());
+		if (tmp > 32 && tmp < 126)
+			c = static_cast<char>(tmp);
+		return c;
+	}
+	switch (literal.size())
+	{
+		case 1:
+			c = literal[0];
+			break;
+		case 3:	// to handle?
+			if (literal[0] == '\'' && literal[2] == '\'')
+				c = literal[1];
+			break;
+		default:
+			return false;
+	}
+	return c;
+}
+
+
+void	ScalarConerter::stod(const std::string& literal)
+{
+
+}
+
+void	ScalarConerter::stof(const std::string& literal)
+{
+
+}
+
+void	ScalarConerter::stoi(const std::string& literal)
+{
+
+}
+
+void	ScalarConerter::stoc(const std::string& literal)
+{
+	char	c = convertChar(literal);
+
+	if (c)
+		std::cout << "char : \'" << c << "\'" << std::endl;
+	else
+		std::cout << "char : Non displayable" << std::endl;
+
+}
+
+
 bool	ScalarConerter::isPseudoLiteral(const std::string& literal)
 {
-	if (literal != "-inff" && literal != "+inff" &&
+	if (literal != "-inff" && literal != "+inff" && literal == "nanf" &&
 		literal != "-inf" && literal != "+inf" && literal != "nan")
 		return false;
 	return true;
 }
+
 
 void	ScalarConerter::convert(const std::string& literal)
 {
