@@ -32,10 +32,15 @@ int	getPrecision(const std::string& literal)
 
 // }
 
-// static void	convertFloat(const std::string& literal)
-// {
-	
-// }
+static void	convertFloat(const std::string& literal)
+{
+	float	n = static_cast<float>(std::atof(literal.c_str()));
+
+	std::cout << "char : \'" << static_cast<char>(n) << "\'" << std::endl;	// Needs checks
+	std::cout << "int : " << static_cast<int>(n) << std::endl;
+	std::cout << "float : " << std::fixed << std::setprecision(getPrecision(literal)) << n << "f" << std::endl;
+	std::cout << "double : " << std::fixed << std::setprecision(getPrecision(literal)) << static_cast<double>(n) << std::endl;
+}
 
 static void	convertInt(const std::string& literal)
 {
@@ -65,13 +70,19 @@ void	ScalarConverter::convert(const std::string& literal)
 	int	type = checkType(literal);
 	switch (type)
 	{
+		// case 0:
+
 		case 1:
 			convertChar(literal);
 			break;
 		case 2:
 			convertInt(literal);
 			break;
+		case 3:
+			convertFloat(literal);
+			break;
 		default:
+			std::cerr << "Invalid argument:\n<literal> types allowed: char, int, float, double" << std::endl;
 			break;
 	}
 
