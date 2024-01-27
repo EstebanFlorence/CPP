@@ -2,10 +2,49 @@
 # include <limits>
 # include <typeinfo>
 
-// bool	isDouble(const std::string& literal)
-// {
-	
-// }
+bool	isDouble(const std::string& literal)
+{
+	if (literal.empty() || std::isspace(static_cast<unsigned char>(literal.front())) || std::isspace(static_cast<unsigned char>(literal.back())))
+		return false;
+
+	size_t	i = 0;
+
+	if (literal[0] == '-' || literal[0] == '+')
+	{
+		if (literal.size() == 1)
+			return false;
+		i = 1;
+	}
+
+	//	Allow leading 0s?
+	if (literal.size() > 1 && literal[i] == '0')
+		return false;
+
+	bool	decimalPoint = false;
+	for (; i < literal.size(); i++)
+	{
+		if (literal[i] == '.')
+		{
+			if (decimalPoint)
+				return false;
+			decimalPoint = true;
+		}
+		else if (!std::isdigit(literal[i]))
+			return false;
+	}
+	if (!decimalPoint)
+		return false;
+
+	errno = 0;
+	char*	end;
+	double	num = std::strtod(literal.c_str(), &end);
+	if (errno == ERANGE)
+		return false;
+	if (num < std::numeric_limits<double>::min() || num > std::numeric_limits<double>::max())
+		return false;
+
+	return true;
+}
 
 bool	isFloat(const std::string& literal)
 {
@@ -119,5 +158,7 @@ int	checkType(const std::string& literal)
 		return 2;
 	if (isFloat(literal))
 		return 3;
+	if (isDouble(literal))
+		return 4;
 	return 0;
 }
