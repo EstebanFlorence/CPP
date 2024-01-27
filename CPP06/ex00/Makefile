@@ -2,7 +2,7 @@ NAME		=	ScalarConverter
 
 OBJ_DIR		=	./.obj/
 
-SRCS		=   main.cpp ScalarConverter.cpp
+SRCS		=   main.cpp ScalarConverter.cpp ConverterTools.cpp
 
 OBJS        =	$(addprefix $(OBJ_DIR),$(notdir $(SRCS:.cpp=.o)))
 
@@ -10,9 +10,7 @@ CXX			=	c++
 
 RM			=	rm -rf
 
-CXXFLAGS	=	-Wall -Wextra -Werror -g -std=c++98
-
-# ARGS		=	
+CXXFLAGS	=	-Wall -Wextra -Werror -Wconversion -g -std=c++98
 
 MAKEFLAGS	+=	--silent
 
