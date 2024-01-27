@@ -2,7 +2,7 @@ NAME		=	ScalarConverter
 
 OBJ_DIR		=	./.obj/
 
-SRCS		=   main.cpp ScalarConverter.cpp ConverterTools.cpp
+SRCS		=   main.cpp ScalarConverter.cpp ConverterTypes.cpp
 
 OBJS        =	$(addprefix $(OBJ_DIR),$(notdir $(SRCS:.cpp=.o)))
 

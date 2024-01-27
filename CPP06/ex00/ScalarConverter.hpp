@@ -4,6 +4,9 @@
 # include <iostream>
 # include <limits>
 # include <typeinfo>
+# include <cctype>
+# include <iomanip>
+# include <cerrno>
 
 class	ScalarConverter
 {
