@@ -4,7 +4,7 @@
 
 bool	isDouble(const std::string& literal)
 {
-	if (literal.empty() || std::isspace(static_cast<unsigned char>(literal.front())) || std::isspace(static_cast<unsigned char>(literal.back())))
+	if (literal.empty())
 		return false;
 
 	size_t	i = 0;
@@ -48,8 +48,7 @@ bool	isDouble(const std::string& literal)
 
 bool	isFloat(const std::string& literal)
 {
-	if (literal.empty() || literal.back() != 'f' ||
-		std::isspace(static_cast<unsigned char>(literal.front())) || std::isspace(static_cast<unsigned char>(literal.back())))
+	if (literal.empty() || literal[literal.size() - 1] != 'f')
 		return false;
 
 	size_t	i = 0;
@@ -95,7 +94,7 @@ bool	isFloat(const std::string& literal)
 
 bool	isInt(const std::string& literal)
 {
-	if (literal.empty() || std::isspace(static_cast<unsigned char>(literal.front())) || std::isspace(static_cast<unsigned char>(literal.back())))
+	if (literal.empty())
 		return false;
 
 	size_t	i = 0;
@@ -152,13 +151,13 @@ int	checkType(const std::string& literal)
 {
 	if (isPseudoLiteral(literal))
 		return 0;
-	if (isChar(literal))
+	else if (isChar(literal))
 		return 1;
-	if (isInt(literal))
+	else if (isInt(literal))
 		return 2;
-	if (isFloat(literal))
+	else if (isFloat(literal))
 		return 3;
-	if (isDouble(literal))
+	else if (isDouble(literal))
 		return 4;
-	return 0;
+	return -1;
 }
