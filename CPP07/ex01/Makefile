@@ -1,8 +1,8 @@
-NAME		=	whateverTemplate
+NAME		=	iterTemplate
 
 OBJ_DIR		=	./.obj/
 
-SRCS		=   main.cpp whatever.cpp
+SRCS		=   main.cpp
 
 OBJS        =	$(addprefix $(OBJ_DIR),$(notdir $(SRCS:.cpp=.o)))
 
