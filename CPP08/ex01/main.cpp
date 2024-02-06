@@ -21,17 +21,24 @@ int main(int ac, char **av)
 		return 1;
 	}
 
-	Span				sp2 = Span(std::atoi(av[1]));
+	try
+	{
+		Span				sp2 = Span(std::atoi(av[1]));
 
-	srand(time(0));
-	for (unsigned int i = 0; i < sp2.getSize(); i++)
-		sp2.addNumber(rand() % 1000);
-	for (unsigned int i = 0; i < sp2.getSize(); i++)
-		std::cout << sp2[i] << " ";
-	std::cout << std::endl;
+		srand(time(0));
+		for (unsigned int i = 0; i < sp2.getSize(); i++)
+			sp2.addNumber(rand() % 1000);
+		for (unsigned int i = 0; i < sp2.getSize(); i++)
+			std::cout << sp2[i] << " ";
+		std::cout << std::endl;
 
-	std::cout << sp2.shortestSpan() << std::endl;
-	std::cout << sp2.longestSpan() << std::endl;
+		std::cout << sp2.shortestSpan() << std::endl;
+		std::cout << sp2.longestSpan() << std::endl;
+	}
+	catch (std::exception& ex)
+	{
+		std::cout << ex.what() << std::endl;
+	}
 
 	return 0;
 }

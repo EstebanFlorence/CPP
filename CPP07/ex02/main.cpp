@@ -50,8 +50,15 @@ int	main()
 	{
 		std::cout << ex.what() << "\n";
 	}
-	std::cout << std::endl;
-
+	try
+	{
+		Array<int>	negativeArray(-MAX_VALUE);
+		std::cout << negativeArray.size() << std::endl;
+	}
+	catch (std::exception& ex)
+	{
+		std::cout << ex.what() << "\n";
+	}
 
 	return 0;
 }
