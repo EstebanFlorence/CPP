@@ -4,7 +4,9 @@ Span::Span() {}
 
 Span::Span(unsigned int n)
 : N(n)
-{}
+{
+	container.reserve(N);
+}
 
 Span::Span(const Span& copy)
 : N(copy.N), container(copy.container)
