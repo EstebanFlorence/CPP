@@ -1,4 +1,4 @@
-NAME		=	iterTemplate
+NAME		=	MutantStack
 
 OBJ_DIR		=	./.obj/
 
@@ -10,7 +10,9 @@ CXX			=	c++
 
 RM			=	rm -rf
 
-CXXFLAGS	=	-Wall -Wextra -Werror-Wshadow -g -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -Wshadow -g -std=c++98
+
+ARGS		=	10
 
 MAKEFLAGS	+=	--silent
 
@@ -38,6 +40,6 @@ fclean:			clean
 re:				fclean all
 
 run:			re
-				./${NAME}
+				./${NAME} ${ARGS}
 
 .PHONY:			all clean fclean re bonus

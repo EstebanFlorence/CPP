@@ -4,19 +4,21 @@
 # include <iostream>
 
 template <typename T>
-T	power(T num)
+void	power(T& num)
 {
 	num *= num;
-
-	return num;
 }
 
-// ...
+template <typename T>
+void	 printType(const T& element)
+{
+	std::cout << element << " ";
+}
 
 template <typename T, typename F>
-void	iter(const T* array, const size_t len, F func)
+void	iter(T* array, const size_t len, F func)
 {
-	for (size_t i + 0; i < len; i++)
+	for (size_t i = 0; i < len; i++)
 		func(array[i]);
 }
 

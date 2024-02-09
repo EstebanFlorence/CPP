@@ -1,4 +1,4 @@
-NAME		=	iterTemplate
+NAME		=	arrayTemplate
 
 OBJ_DIR		=	./.obj/
 
@@ -10,7 +10,7 @@ CXX			=	c++
 
 RM			=	rm -rf
 
-CXXFLAGS	=	-Wall -Wextra -Werror-Wshadow -g -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -Wshadow -g -std=c++98
 
 MAKEFLAGS	+=	--silent
 
