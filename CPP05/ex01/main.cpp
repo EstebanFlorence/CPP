@@ -26,7 +26,7 @@ void	test1()
 {
 	try
 	{
-		Form	tooHighGradeForm("Bomboclat", 150, 151);
+		Form	tooLowGradeForm("Bomboclat", 150, 151);
 	}
 	catch (std::exception& ex)
 	{
@@ -35,7 +35,7 @@ void	test1()
 
 	try
 	{
-		Form	tooLowGradeForm("Bomboclat", 1, 0);
+		Form	tooHighGradeForm("Bomboclat", 1, 0);
 	}
 	catch (std::exception& ex)
 	{

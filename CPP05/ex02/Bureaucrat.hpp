@@ -5,6 +5,8 @@
 # include <string>
 # include <stdexcept>
 # include <fstream>
+# include <cstdlib>
+# include <ctime>
 # include "AForm.hpp"
 
 # define MAX_GRADE 1

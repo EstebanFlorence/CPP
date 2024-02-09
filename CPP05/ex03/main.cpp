@@ -1,49 +1,33 @@
 #include "Intern.hpp"
 
-void	test2()
-{
-	try
-	{
-
-	}
-	catch (std::exception& ex)
-	{
-		std::cout << "Exception: " << ex.what() << std::endl;
-	}
-}
-
-void	test1()
-{
-	try
-	{
-
-	}
-	catch (std::exception& ex)
-	{
-		std::cout << "Exception: " << ex.what() << std::endl;
-	}
-
-	try
-	{
-
-	}
-	catch (std::exception& ex)
-	{
-		std::cout << "Exception: " << ex.what() << std::endl;
-	}
-}
-
 int	main()
 {
 	Intern someRandomIntern;
-	AForm* rrf;
-	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 
-	// std::cout << "Test 1:" << std::endl;
-	// test1();
+	try
+	{
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		std::cout << *rrf << std::endl;
+		delete rrf;
+	}
+	catch (std::exception& ex)
+	{
+		std::cout << "Exception: " << ex.what() << std::endl;
+	}
 
-	// std::cout << "Test 2:" << std::endl;
-	// test2();
+	try
+	{
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("lobotomy request", "Bender");
+		if (rrf)
+			std::cout << *rrf << std::endl;
+		delete rrf;
+	}
+	catch (std::exception& ex)
+	{
+		std::cout << "Exception: " << ex.what() << std::endl;
+	}
 
 	return 0;
 }

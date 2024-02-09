@@ -1,5 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
 
+
 ShrubberyCreationForm::ShrubberyCreationForm()
 : AForm("ShrubberyCreation", 145, 137), _target("None")
 {}
@@ -9,7 +10,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target)
 {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& copy)
-{ *this = copy; }
+: AForm(copy), _target(copy._target)
+{}
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
@@ -29,7 +31,7 @@ const std::string	ShrubberyCreationForm::getTarget() const
 void	ShrubberyCreationForm::execute(const Bureaucrat& executor) const
 {
 	checkForm(executor);
-	std::ofstream	ofile(getTarget() + "_shrubbery");
+	std::ofstream	ofile((getTarget() + "_shrubbery").c_str());
 
 	ofile << "		# #### ####" << std::endl;
 	ofile << "	### \\/#|### |/####" << std::endl;

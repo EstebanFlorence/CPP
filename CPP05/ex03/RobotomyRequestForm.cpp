@@ -9,7 +9,8 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string& target)
 {}
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy)
-{ *this = copy; }
+:AForm(copy), _target(copy._target)
+{}
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
 

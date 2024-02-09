@@ -9,7 +9,8 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string& target)
 {}
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& copy)
-{ *this = copy; }
+: AForm(copy), _target(copy._target)
+{}
 
 PresidentialPardonForm::~PresidentialPardonForm() {}
 
