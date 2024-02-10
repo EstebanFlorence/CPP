@@ -2,7 +2,8 @@
 # define SCALARCONVERTER_HPP
 
 # include <iostream>
-# include <limits>
+# include <climits>
+# include <cstdlib>
 # include <typeinfo>
 # include <cctype>
 # include <iomanip>

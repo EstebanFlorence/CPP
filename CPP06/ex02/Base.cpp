@@ -1,9 +1,11 @@
 #include "Base.hpp"
+#include <ctime>
 
 Base::~Base() {}
 
 Base*	generate()
 {
+	std::srand(static_cast<unsigned int>(std::time(0)));
 	switch (std::rand() % 3)
 	{
 		case 0:

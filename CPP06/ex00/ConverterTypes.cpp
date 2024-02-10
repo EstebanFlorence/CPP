@@ -1,6 +1,8 @@
-# include <iostream>
-# include <limits>
-# include <typeinfo>
+#include <iostream>
+#include <climits>
+#include <limits>
+#include <cstdlib>
+#include <cerrno>
 
 bool	isDouble(const std::string& literal)
 {
