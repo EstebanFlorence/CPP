@@ -72,6 +72,9 @@
 		"random": "cpp",
 		"fstream": "cpp",
 		"ranges": "cpp",
-		"stack": "cpp"
+		"stack": "cpp",
+		"__tree": "cpp",
+		"list": "cpp",
+		"map": "cpp"
 	}
 }

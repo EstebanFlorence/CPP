@@ -10,9 +10,9 @@ CXX			=	c++
 
 RM			=	rm -rf
 
-CXXFLAGS	=	-Wall -Wextra -Werror -Wshadow -g -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -Wconversion -g -std=c++98
 
-ARGS		=	
+ARGS		=	input.txt
 
 MAKEFLAGS	+=	--silent
 
