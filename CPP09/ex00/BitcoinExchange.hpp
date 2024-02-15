@@ -26,17 +26,13 @@ class	BitcoinExchange
 		~BitcoinExchange();
 		BitcoinExchange&	operator=(const BitcoinExchange& other);
 
-		void	loadDatabase(const std::string& file);
-		bool	parseDatabase();
-		bool	parseInputFile();
-		void	displayPrice();
+		bool	getExchangeRates();
+		bool	showExchangeValues();
 
 		bool	isValidDate(std::string& s);
 		bool	isValidAmount(const char* s, float& n);
 		bool	trim(std::string& s);
 		bool	bitError(int n, const std::string& s);
-		bool	extractDate(std::istringstream iss, int& y, int& m, int& d);
-
 
 };
 

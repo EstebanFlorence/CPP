@@ -4,14 +4,11 @@ BitcoinExchange::BitcoinExchange() {}
 
 BitcoinExchange::BitcoinExchange(const std::string& file)
 : databasePath("./data.csv"), list(file)
-{
-	// loadDatabase(file);
-	// list = file;
-}
+{}
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange& copy)
-: list(copy.list), exchangeRates(copy.exchangeRates)
-{}
+: databasePath(copy.databasePath)//, list(copy.list), exchangeRates(copy.exchangeRates)
+{ *this = copy; }
 
 BitcoinExchange::~BitcoinExchange() {}
 
@@ -27,52 +24,33 @@ BitcoinExchange&	BitcoinExchange::operator=(const BitcoinExchange& other)
 }
 
 
-void	BitcoinExchange::loadDatabase(const std::string& file)
-{
-	std::ifstream	databaseFile(databasePath);
-	std::ifstream	inputFile(file.c_str());
-
-	if (!databaseFile)
-		std::runtime_error("Error: missing database file");
-	else if (!inputFile)
-		std::runtime_error("Error: missing input file");
-
-	databaseFile.close();
-	inputFile.close();
-}
-
-bool	BitcoinExchange::parseDatabase()
+bool	BitcoinExchange::getExchangeRates()
 {
 	std::ifstream	databaseFile(databasePath);
 	std::string		line;
 
-	std::getline(databaseFile, line);	// Skip first line
+	std::getline(databaseFile, line);
 	while (std::getline(databaseFile, line))
 	{
 		std::istringstream	iss(line);
 		std::string			date;
 		float				price;
 
-		if (std::getline(iss, date, ',') && isValidDate(date) && iss >> price)	// Check also price?
-		{
+		if (std::getline(iss, date, ',') && isValidDate(date) && iss >> price)
 			exchangeRates[date] = price;
-		}
 		else
-		{
-			std::cerr << "Error: bad input ==> " << line << std::endl;
-			return false;
-		}
+			return bitError(1, line);
 	}
 
 	return true;
 }
 
-bool	BitcoinExchange::parseInputFile()
+bool	BitcoinExchange::showExchangeValues()
 {
 	std::ifstream	inputFile(list);
 	std::string		line;
 
-	std::getline(inputFile, line);	// Skip first line
+	std::getline(inputFile, line);
 	while (std::getline(inputFile, line))
 	{
 		if (line.empty())
@@ -85,15 +63,21 @@ bool	BitcoinExchange::parseInputFile()
 
 		if (std::getline(iss, date, '|') && isValidDate(date) && std::getline(iss, sValue))
 		{
-			if (!trim(sValue) || !isValidAmount(sValue.c_str(), fValue))
+			if (!trim(sValue))
 			{
 				bitError(1, line);
 				continue;
 			}
+			else if (!isValidAmount(sValue.c_str(), fValue))
+				continue;
 			std::map<std::string, float>::const_iterator	it = exchangeRates.lower_bound(date);
-			std::cout << it->first << std::endl;
 			if (it != exchangeRates.end())
 				std::cout << date << " => " << fValue << " = " << fValue * it->second << std::endl;
+			else
+			{
+				bitError(1, line);
+				continue;
+			}
 		}
 		else
 		{
@@ -105,20 +89,27 @@ bool	BitcoinExchange::parseInputFile()
 	return true;
 }
 
-void	BitcoinExchange::displayPrice()
-{
-
-}
-
 
 bool	BitcoinExchange::isValidDate(std::string& s)
 {
 	if (!trim(s))
 		return false;
 
+	int	year, month, day;
+	if (sscanf(s.c_str(), "%d-%d-%d", &year, &month, &day) < 3)
+		return false;
 	struct tm	tm = {};
 	if (!strptime(s.c_str(), "%Y-%m-%d", &tm))
 		return false;
+	if ((month == 4 || month == 6 || month == 9 || month == 11) && day == 31)
+		return false;
+	if (month == 2)
+	{
+		bool isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+		if (day > 29 || (day == 29 && !isLeapYear))
+			return false;
+	}
+	// Final check for last chars? ex. 2011-02-28aa
 	time_t	time = mktime(&tm);
 
 	struct tm	startTime = {};
@@ -145,26 +136,19 @@ bool	BitcoinExchange::isValidAmount(const char* s, float& n)
 		return bitError(1, s);
 	if (n < 0)
 		return bitError(2, "");
-	else if (n > 100000)
+	else if (n > 1000)
 		return bitError(3, "");
 
 	return true;
-
-	// std::stringstream	ss(s);
-	// double				value(0);
-
-	// ss >> value;
-
-	// return ss.good();
 }
 
 bool	BitcoinExchange::trim(std::string& s)
 {
-	if (s.empty())
-		return false;
-
 	s.erase(0, s.find_first_not_of(" \t\r\n"));
 	s.erase(s.find_last_not_of(" \t\r\n") + 1);
+
+	if (s.empty())
+		return false;
 
 	return true;
 }
@@ -186,7 +170,7 @@ bool	BitcoinExchange::bitError(int n, const std::string& s)
 		break;
 
 		default:
-			break;
+		break;
 	}
 
 	return false;

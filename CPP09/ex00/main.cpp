@@ -35,9 +35,9 @@ int	main(int ac, char **av)
 
 	BitcoinExchange	bit(av[1]);
 
-	if (!bit.parseDatabase())
+	if (!bit.getExchangeRates())
 		return 1;
-	if (bit.parseInputFile())
+	if (!bit.showExchangeValues())
 		return 1;
 
 	return 0;
