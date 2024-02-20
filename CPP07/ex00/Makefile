@@ -2,7 +2,7 @@ NAME		=	whateverTemplate
 
 OBJ_DIR		=	./.obj/
 
-SRCS		=   main.cpp whatever.cpp
+SRCS		=   main.cpp
 
 OBJS        =	$(addprefix $(OBJ_DIR),$(notdir $(SRCS:.cpp=.o)))
 
@@ -10,7 +10,7 @@ CXX			=	c++
 
 RM			=	rm -rf
 
-CXXFLAGS	=	-Wall -Wextra -Werror-Wshadow -g -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -g -std=c++98
 
 MAKEFLAGS	+=	--silent
 

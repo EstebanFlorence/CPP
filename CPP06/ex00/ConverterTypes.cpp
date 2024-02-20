@@ -18,7 +18,6 @@ bool	isDouble(const std::string& literal)
 		i = 1;
 	}
 
-	//	Allow leading 0s?
 	if (literal.size() > 1 && literal[i] == '0')
 		return false;
 
@@ -62,7 +61,6 @@ bool	isFloat(const std::string& literal)
 		i = 1;
 	}
 
-	//	Allow leading 0s?
 	if (literal.size() > 1 && literal[i] == '0')
 		return false;
 
@@ -108,7 +106,6 @@ bool	isInt(const std::string& literal)
 		i = 1;
 	}
 
-	//	Allow leading 0s?
 	if (literal.size() > 1 && literal[i] == '0')
 		return false;
 
