@@ -2,7 +2,7 @@
 
 template<class T>
 Array<T>::Array()
-: _array(new T[0]),  _arraySize(0)
+: _array(NULL),  _arraySize(0)
 {}
 
 template<class T>
