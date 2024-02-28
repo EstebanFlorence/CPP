@@ -10,7 +10,7 @@ CXX			=	c++
 
 RM			=	rm -rf
 
-CXXFLAGS	=	-Wall -Wextra -Werror -Wshadow -g -std=c++98
+CXXFLAGS	=	-Wall -Wextra -Werror -Wconversion -g -std=c++98
 
 ARGS		=	"1 2 3 4 5 6 7" 3
 
