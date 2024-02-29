@@ -1,16 +1,16 @@
 {
 	"configurations": [
 		{
-			"name": "(lldb) Launch",
+			"name": "(gdb) Launch",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/CPP09/ex01/RPN",
-			"args": ["8 9 * 9 - 9 - 9 - 4 - 1 +"],
+			"program": "${workspaceFolder}/CPP09/ex00/btc",
+			"args": ["data.csv"],
 			"stopAtEntry": false,
-			"cwd": "${fileDirname}",
+			"cwd": "${workspaceFolder}",
 			"environment": [],
 			"externalConsole": true,
-			"MIMode": "lldb"
+			"MIMode": "gdb"
 		}
 	]
 }

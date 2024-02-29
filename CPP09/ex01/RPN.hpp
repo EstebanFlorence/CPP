@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <exception>
+# include <cerrno>
 # include <sstream>
 # include <cstdlib>
 # include <climits>

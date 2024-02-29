@@ -26,7 +26,7 @@ BitcoinExchange&	BitcoinExchange::operator=(const BitcoinExchange& other)
 
 bool	BitcoinExchange::getExchangeRates()
 {
-	std::ifstream	databaseFile(databasePath);
+	std::ifstream	databaseFile(databasePath.c_str());
 	std::string		line;
 
 	std::getline(databaseFile, line);
@@ -47,7 +47,7 @@ bool	BitcoinExchange::getExchangeRates()
 
 bool	BitcoinExchange::showExchangeValues()
 {
-	std::ifstream	inputFile(list);
+	std::ifstream	inputFile(list.c_str());
 	std::string		line;
 
 	std::getline(inputFile, line);
@@ -129,7 +129,7 @@ bool	BitcoinExchange::isValidDate(std::string& s)
 
 bool	BitcoinExchange::isValidAmount(const char* s, float& n)
 {
-	char*	endPtr = nullptr;
+	char*	endPtr = NULL;
 
 	n = std::strtof(s, &endPtr);
 	if (endPtr == s || *endPtr != 0)
