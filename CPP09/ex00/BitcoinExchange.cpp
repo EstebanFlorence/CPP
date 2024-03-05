@@ -71,6 +71,8 @@ bool	BitcoinExchange::showExchangeValues()
 			else if (!isValidAmount(sValue.c_str(), fValue))
 				continue;
 			std::map<std::string, float>::const_iterator	it = exchangeRates.lower_bound(date);
+			if (it != exchangeRates.begin() && (it == exchangeRates.end() || it->first != date))
+				--it;
 			if (it != exchangeRates.end())
 				std::cout << date << " => " << fValue << " = " << fValue * it->second << std::endl;
 			else
@@ -100,6 +102,8 @@ bool	BitcoinExchange::isValidDate(std::string& s)
 		return false;
 	struct tm	tm = {};
 	if (!strptime(s.c_str(), "%Y-%m-%d", &tm))
+		return false;
+	if (day > 31)
 		return false;
 	if ((month == 4 || month == 6 || month == 9 || month == 11) && day == 31)
 		return false;

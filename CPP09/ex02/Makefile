@@ -12,7 +12,7 @@ RM			=	rm -rf
 
 CXXFLAGS	=	-Wall -Wextra -Werror -Wconversion -g -std=c++98
 
-ARGS		=	1 6 10 7 8
+ARGS		=	`shuf -i 1-1000 -n 3000 | tr "\n" " " `
 
 
 MAKEFLAGS	+=	--silent

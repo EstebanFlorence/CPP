@@ -11,8 +11,6 @@
 # include <ctime>
 # include <stdexcept>
 
-// # define THRESHOLD 7
-
 class	PmergeMe
 {
 	private:

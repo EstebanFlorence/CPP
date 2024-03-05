@@ -11,9 +11,9 @@ PmergeMe::PmergeMe(const std::string& sequence)
 }
 
 PmergeMe::PmergeMe(const PmergeMe& copy)
-: oldSequence(copy.oldSequence), vecSequence(copy.vecSequence), deqSequence(copy.deqSequence),
-vecExecTime(copy.vecExecTime), deqExecTime(copy.deqExecTime)
-{}
+// : oldSequence(copy.oldSequence), vecSequence(copy.vecSequence), deqSequence(copy.deqSequence),
+// vecExecTime(copy.vecExecTime), deqExecTime(copy.deqExecTime)
+{ *this = copy; }
 
 PmergeMe::~PmergeMe() {}
 
@@ -63,21 +63,6 @@ void	PmergeMe::run()
 	deqExecTime = static_cast<double>((end - start)) / static_cast<double>(CLOCKS_PER_SEC) * 1000000.0;
 
 }
-
-// bool	PmergeMe::pMergeInsertion(std::deque<int>& sequence)
-// {
-// 	clock_t	start = clock();
-
-// 	clock_t	end = clock();
-// 	deqExecTime = static_cast<double>((end - start) / CLOCKS_PER_SEC);
-
-// 	return true;
-// }
-
-// void	PmergeMe::mergeSort()
-// {
-
-// }
 
 const std::string&	PmergeMe::getOldSequence() const
 { return oldSequence; }

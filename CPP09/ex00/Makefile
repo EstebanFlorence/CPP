@@ -12,7 +12,7 @@ RM			=	rm -rf
 
 CXXFLAGS	=	-Wall -Wextra -Werror -Wconversion -g -std=c++98
 
-ARGS		=	input.txt
+ARGS		=	input.csv
 
 MAKEFLAGS	+=	--silent
 

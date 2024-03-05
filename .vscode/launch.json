@@ -5,9 +5,9 @@
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "${workspaceFolder}/CPP09/ex00/btc",
-			"args": ["data.csv"],
+			"args": ["input.txt"],
 			"stopAtEntry": false,
-			"cwd": "${workspaceFolder}",
+			"cwd": "${workspaceFolder}/CPP09/ex00",
 			"environment": [],
 			"externalConsole": true,
 			"MIMode": "gdb"
